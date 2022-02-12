@@ -22,8 +22,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    //console.log(JSON.parse(localStorage.getItem('usuario') as string));
+    this.userSave = JSON.parse(localStorage.getItem('usuario') as string);
+    if (this.userSave !== null) {
+      this.router.navigate(['formularios']);
+    }
   }
 
   crearFormulario(){

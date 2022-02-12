@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Tareas Diarias</h1>
-    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="enviarFormulario()" class="row g-3">
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="enviarFormulario()" class="row g-3 mt-5">
         <div class="col-6">
             <label class="form-label">Email</label>
             <input class="form-control" type="text" formControlName="email" placeholder="Escribe tu email">
@@ -12,7 +12,7 @@
             <p *ngIf="forma.controls['password'].errors && forma.controls['password'].dirty" style="color: red;">Min 6 caracteres</p>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary" [disabled]="!forma.valid">Guardar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!forma.valid">Ingresar</button>
         </div>
     </form>
 </div>

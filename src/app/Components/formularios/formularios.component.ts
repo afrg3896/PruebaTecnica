@@ -37,6 +37,11 @@ export class FormulariosComponent implements OnInit {
   irEditar(){
     this.router.navigate(['editar']);
   }
+
+  salir(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 }
 
 
