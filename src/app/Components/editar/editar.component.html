@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Editar/ Borrar Tareas Diarias</h1>
+
+    <div class="mt-3">
+        <input *ngIf="activarInput" style="margin: 7px;" [(ngModel)]="inputText" type="text" placeholder="Nuevo Nombre"> <br>
+
+        <ul>
+            <li *ngFor="let tarea of tareas; let i= index">{{tarea | uppercase}}
+                <br>
+                <button type="button" class="btn btn-warning mr-5" (click)="editarTarea(i)">Editar</button>
+                <button type="button" class="btn btn-danger mr-5" (click)="borrarTarea(i)">Eliminar</button>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mt-10" style="flex: auto;">
+        <button class="btn btn-primary" [routerLink]="['formularios']">Regresar a Tareas</button>
+    </div>
+</div>

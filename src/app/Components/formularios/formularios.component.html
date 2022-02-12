@@ -1,0 +1,24 @@
+<div class="container">
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardarTarea()" class="row g-3">
+        <div>
+            <h1>Tareas Diarias</h1>
+        </div>
+        <div class="col-6">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" formControlName="name" placeholder="Nombre Tarea">
+            <p *ngIf="forma.controls['name'].errors && forma.controls['name'].dirty" style="color: red;">* La tarea debe de tener mas de 2 caracteres</p>
+
+        </div>
+        <div class="col-6">
+            <ol>
+                <li *ngFor="let tarea of listaTarea">{{tarea}}</li>
+            </ol>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" [disabled]="!forma.valid">Guardar</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-success" (click)="irEditar()">Editar</button>
+        </div>
+    </form>
+</div>
